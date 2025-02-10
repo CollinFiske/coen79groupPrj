@@ -1,5 +1,6 @@
+#include "listing.h"
 
-class part {
+class part : listing {
 
 
     private:
