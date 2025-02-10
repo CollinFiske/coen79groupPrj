@@ -1,5 +1,5 @@
 
-class bid {
+class bid : cardealership {
 
   bid (listing obj){
   }
