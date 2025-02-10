@@ -31,6 +31,11 @@ class vehicle {
         double getBid(){
             
         }
+        string getMake(){ return make; }
+        string getModel(){ return model; }
+        int getYear(){ return year; }
+        int getMiles(){ return miles; }
+        string getCondition(){}
 
     //SETTERS
         void setUUid(){
@@ -48,6 +53,11 @@ class vehicle {
         void setBid(){
             
         }
+        void setMake(){ }
+        void setModel(){  }
+        void setYear(){  }
+        void setMiles(){ }
+        void setCondition(){}
 
 
 
