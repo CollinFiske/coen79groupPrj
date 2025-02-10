@@ -1,5 +1,6 @@
+#include "listing.h"
 
-class vehicle {
+class vehicle : listing {
 
 
     private:
