@@ -3,13 +3,13 @@ class part {
 
 
     private:
-        int partNumber;
+        int UUid;
         double cost;
         int quantity;
         double totalCost;
 
     public:
-        int getPartNumber(){
+        int getUUid(){
 
         }
         double getCost(){
@@ -17,20 +17,18 @@ class part {
         }
         int getQuantity(){
 
-
         }
         double getTotalCost(){
 
         }
 
-        void setPartNumber(){
+        void setUUid(){
 
         }
         void setCost(){
 
         }
         void setQuantity(){
-
 
         }
         void setTotalCost(){
