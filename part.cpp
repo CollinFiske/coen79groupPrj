@@ -23,5 +23,20 @@ class part {
 
         }
 
+        void setPartNumber(){
+
+        }
+        void setCost(){
+
+        }
+        void setQuantity(){
+
+
+        }
+        void setTotalCost(){
+
+        }
+
+
 
 };
