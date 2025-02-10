@@ -1,10 +1,13 @@
 
 class cardealership {
 
-public:
-  
+  cardealership(){ goToBrowse(); }
 
-private:
+public:
+  void goToBrowse();
+  void goToBid();
+  void goToListing();
+
 
 
 }
