@@ -8,6 +8,7 @@ class listing {
         string name;
         double buyItNow;
         double bid;
+        string user;
         
 
     public:
@@ -17,11 +18,13 @@ class listing {
         double getName();
         double getBIN();
         double getBid();
+        string getUser();
         
     //SETTERS
         void setUUid();
         void setName();
         void setBIN();
         void setBid();
+        void setUser();
 
 };
