@@ -4,10 +4,7 @@ class vehicle : listing {
 
 
     private:
-        int UUid;
-        int quantity;
-        double buyItNow;
-        double bid;
+        
         string make;
         string model;
         int year;
@@ -17,21 +14,6 @@ class vehicle : listing {
 
     public:
     //GETTERS
-        int getUUid(){
-
-        }
-        double getName(){
-
-        }
-        int getQuantity(){
-
-        }
-        double getBIN(){
-
-        }
-        double getBid(){
-            
-        }
         string getMake(){ return make; }
         string getModel(){ return model; }
         int getYear(){ return year; }
@@ -39,21 +21,6 @@ class vehicle : listing {
         string getCondition(){}
 
     //SETTERS
-        void setUUid(){
-
-        }
-        void setName(){
-
-        }
-        void setQuantity(){
-
-        }
-        void setBIN(){
-
-        }
-        void setBid(){
-            
-        }
         void setMake(){ }
         void setModel(){  }
         void setYear(){  }
