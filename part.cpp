@@ -3,47 +3,19 @@ class part {
 
 
     private:
-        int UUid;
-        string name;
         int quantity;
-        double buyItNow;
-        double bid;
+
 
     public:
-    //GETTERS
-        int getUUid(){
-
-        }
-        double getName(){
-
-        }
+    //GETTER
         int getQuantity(){
 
         }
-        double getBIN(){
 
-        }
-        double getBid(){
-            
-        }
-
-    //SETTERS
-        void setUUid(){
-
-        }
-        void setName(){
-
-        }
+    //SETTER
         void setQuantity(){
 
         }
-        void setBIN(){
-
-        }
-        void setBid(){
-            
-        }
-
 
 
 
