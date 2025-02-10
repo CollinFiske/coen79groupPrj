@@ -5,6 +5,7 @@ class listing {
 
     private:
         int UUid;
+        string name;
         double buyItNow;
         double bid;
         
