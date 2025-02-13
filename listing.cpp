@@ -9,18 +9,18 @@
       user = user;
     }
 
-        listing search(){}
+    listing search(){}
 
-    //GETTERS
-        int getUUid(){ return UUid; }
-        double getName(){ return name; }
-        double getBIN(){ return buyItNow; }
-        double getBid(){ return bid; }
-        string getUser(){ return user; }
-        
-    //SETTERS
-        void setUUid( int n ){ UUid = n; }
-        void setName( string n ){ name = n; }
-        void setBIN( double n ){ buyItNow = n; }
-        void setBid( double n ){ bid = n; }
-        void setUser( string n ){ name = n; }
+//GETTERS
+    int getUUid(){ return UUid; }
+    double getName(){ return name; }
+    double getBIN(){ return buyItNow; }
+    double getBid(){ return bid; }
+    string getUser(){ return user; }
+    
+//SETTERS
+    void setUUid( int n ){ UUid = n; }
+    void setName( string n ){ name = n; }
+    void setBIN( double n ){ buyItNow = n; }
+    void setBid( double n ){ bid = n; }
+    void setUser( string n ){ name = n; }
