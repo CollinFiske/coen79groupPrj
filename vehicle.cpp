@@ -2,8 +2,12 @@
 
 class vehicle : listing {
 
-    vehicle(){
-        
+    vehicle(string make, string model, int year, int miles, string condition){
+        make = make;
+        model = model;
+        year = year;
+        miles = miles;
+        condition = condition;
     }
 
     private:
