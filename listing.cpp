@@ -9,15 +9,9 @@
       user = user;
     }
 
-        int UUid;
-        string name;
-        double buyItNow;
-        double bid;
-        string user;
-        
+        listing search(){}
 
     //GETTERS
-        listing search(){}
         int getUUid(){ return UUid; }
         double getName(){ return name; }
         double getBIN(){ return buyItNow; }
