@@ -2,6 +2,9 @@
 
 class part : listing {
 
+    part(int q){
+        quantity = q;
+    }
 
     private:
         int quantity;
@@ -9,15 +12,9 @@ class part : listing {
 
     public:
     //GETTER
-        int getQuantity(){
-
-        }
+        int getQuantity(){ return quantity; }
 
     //SETTER
-        void setQuantity(){
-
-        }
-
-
+        void setQuantity(int q){ quantity = q; }
 
 };
