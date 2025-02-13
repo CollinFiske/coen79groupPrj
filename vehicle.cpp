@@ -25,14 +25,14 @@ class vehicle : listing {
         string getModel(){ return model; }
         int getYear(){ return year; }
         int getMiles(){ return miles; }
-        string getCondition(){}
+        string getCondition(){ return condition; }
 
     //SETTERS
-        void setMake( string m ){ make = m; }
-        void setModel(string m ){ model = m; }
-        void setYear( int y ){ year = y; }
-        void setMiles( int y ){ miles = y; }
-        void setCondition( string c ){ condition = c; }
+        void setMake(string m){ make = m; }
+        void setModel(string m){ model = m; }
+        void setYear(int y){ year = y; }
+        void setMiles(int y){ miles = y; }
+        void setCondition(string c){ condition = c; }
 
 
 
