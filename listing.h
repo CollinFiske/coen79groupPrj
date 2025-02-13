@@ -1,7 +1,8 @@
 
-
 class listing {
 
+    listing(){}
+    listing(int UUid, int name, double buyItNow, double bid, string user){}
 
     private:
         int UUid;
