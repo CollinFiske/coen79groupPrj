@@ -1,8 +1,9 @@
 #include "Part.h"
 #include <iostream>
 
-Part::Part(int id, string n, double bin, double b, string u, int q)
-    : Listing(id, n, bin, b, u), quantity(q) {}
+// Updated constructor
+Part::Part(string n, double bin, double b, string u, int q, bool assignId)
+    : Listing(n, bin, b, u, assignId), quantity(q) {}
 
 void Part::display() const {
     Listing::display();
