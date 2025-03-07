@@ -6,7 +6,7 @@
 
 class Browse {
 public:
-    void display(const vector<Listing*>& listings);
+    void display(const std::vector<Listing*>& listings); // Display listings with pagination
 };
 
 #endif
