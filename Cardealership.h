@@ -6,22 +6,25 @@
 #include "Listing.h"
 #include "Bid.h"
 #include "Browse.h"
-#include "Create.h"
+
+// Forward declaration for Create class
+class Create;
 
 class CarDealership {
 private:
     std::vector<Listing*> listings;
     Browse browse;
     Bid bid;
-    Create create;
+    Create* create; // Use a pointer to avoid incomplete type issues
 
     const std::string filename = "listings.txt"; // File to store listings
 
 public:
+    CarDealership();
+    ~CarDealership();
     void run();
     void saveListings() const; // Save listings to file
     void loadListings();       // Load listings from file
-    ~CarDealership();         // Destructor to clean up dynamic memory
 };
 
 #endif
