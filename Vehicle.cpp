@@ -1,8 +1,9 @@
 #include "Vehicle.h"
 #include <iostream>
 
-Vehicle::Vehicle(int id, string n, double bin, double b, string u, string mk, string md, int y, int mi, string c)
-    : Listing(id, n, bin, b, u), make(mk), model(md), year(y), miles(mi), condition(c) {}
+// Updated constructor
+Vehicle::Vehicle(string n, double bin, double b, string u, string mk, string md, int y, int mi, string c, bool assignId)
+    : Listing(n, bin, b, u, assignId), make(mk), model(md), year(y), miles(mi), condition(c) {}
 
 void Vehicle::display() const {
     Listing::display();
