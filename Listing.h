@@ -12,8 +12,13 @@ public:
     double bid;
     string user;
 
-    Listing(int id, string n, double bin, double b, string u);
+    static int lastUsedId; // Static counter for unique IDs
+
+    Listing(string n, double bin, double b, string u, bool assignId = true); // Updated constructor
     virtual void display() const;
+
+    // Method to reset lastUsedId (for loading from file)
+    static void setLastUsedId(int id);
 };
 
 #endif
