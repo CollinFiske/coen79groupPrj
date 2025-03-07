@@ -1,10 +1,24 @@
 #include "Cardealership.h"
 #include "Part.h"
 #include "Vehicle.h"
+#include "Create.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <limits> // For numeric_limits
+
+CarDealership::CarDealership() {
+    create = new Create(); // Initialize the Create object
+}
+
+CarDealership::~CarDealership() {
+    for (auto& listing : listings) {
+        delete listing;
+    }
+    delete create; // Clean up the Create object
+}
+
+// Rest of the CarDealership.cpp implementation remains the same
 
 void CarDealership::run() {
     loadListings(); // Load listings from file when the program starts
@@ -49,7 +63,7 @@ void CarDealership::run() {
                 }
             }
         } else if (choice == 3) {
-            listings.push_back(create.createListing());
+            listings.push_back(create->createListing(*this)); // Use -> instead of .
         } else if (choice == 4) {
             saveListings(); // Save listings to file before exiting
             break;
@@ -63,6 +77,9 @@ void CarDealership::saveListings() const {
         std::cerr << "Error: Unable to save listings to file.\n";
         return;
     }
+
+    // Save the last used ID
+    file << "LastUsedId:" << Listing::lastUsedId << "\n";
 
     for (const auto& listing : listings) {
         file << listing->UUid << ","
@@ -96,7 +113,19 @@ void CarDealership::loadListings() {
     }
 
     std::string line;
+    bool lastUsedIdLoaded = false; // Flag to check if LastUsedId has been loaded
+    int maxId = 0; // Track the maximum ID in the file
+
     while (std::getline(file, line)) {
+        if (!lastUsedIdLoaded && line.find("LastUsedId:") == 0) {
+            // Extract the last used ID
+            int lastUsedId = std::stoi(line.substr(11));
+            Listing::setLastUsedId(lastUsedId); // Restore the last used ID
+            lastUsedIdLoaded = true; // Mark LastUsedId as loaded
+            std::cout << "Loaded LastUsedId: " << lastUsedId << "\n"; // Debug output
+            continue;
+        }
+
         std::stringstream ss(line);
         std::string token;
         std::vector<std::string> tokens;
@@ -113,25 +142,36 @@ void CarDealership::loadListings() {
         double bid = std::stod(tokens[3]);
         std::string user = tokens[4];
 
+        // Track the maximum ID in the file
+        if (id > maxId) {
+            maxId = id;
+        }
+
         if (tokens[5] == "Part" && tokens.size() == 7) {
             int quantity = std::stoi(tokens[6]);
-            listings.push_back(new Part(id, name, buyItNow, bid, user, quantity));
+            // Create the Part object without assigning an ID
+            Part* part = new Part(name, buyItNow, bid, user, quantity, false);
+            part->UUid = id; // Manually set the ID from the file
+            listings.push_back(part);
         } else if (tokens[5] == "Vehicle" && tokens.size() == 11) {
             std::string make = tokens[6];
             std::string model = tokens[7];
             int year = std::stoi(tokens[8]);
             int miles = std::stoi(tokens[9]);
             std::string condition = tokens[10];
-            listings.push_back(new Vehicle(id, name, buyItNow, bid, user, make, model, year, miles, condition));
+            // Create the Vehicle object without assigning an ID
+            Vehicle* vehicle = new Vehicle(name, buyItNow, bid, user, make, model, year, miles, condition, false);
+            vehicle->UUid = id; // Manually set the ID from the file
+            listings.push_back(vehicle);
         }
+    }
+
+    // Update lastUsedId to the maximum ID found in the file
+    if (maxId > Listing::lastUsedId) {
+        Listing::setLastUsedId(maxId);
+        std::cout << "Updated LastUsedId to: " << maxId << "\n"; // Debug output
     }
 
     file.close();
     std::cout << "Listings loaded from file.\n";
-}
-
-CarDealership::~CarDealership() {
-    for (auto& listing : listings) {
-        delete listing;
-    }
 }
