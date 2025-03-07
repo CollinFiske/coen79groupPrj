@@ -11,7 +11,7 @@ public:
     int miles;
     string condition;
 
-    Vehicle(int id, string n, double bin, double b, string u, string mk, string md, int y, int mi, string c);
+    Vehicle(string n, double bin, double b, string u, string mk, string md, int y, int mi, string c, bool assignId = true); // Updated constructor
     void display() const override;
 };
 
