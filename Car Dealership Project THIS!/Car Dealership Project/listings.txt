@@ -1,0 +1,8 @@
+LastUsedId:8
+2,Transistor,13.57,9,John Doe,Part,1
+3,A,10,1,roro,Part,1
+4,B,3,2,bred,Part,1
+5,C,5,2,Roland,Part,1
+6,DEMON,15000,15,Roland,Part,1
+7,6,3,2,SOLD,Part,12
+8,testV1,3000,2300,SOLD,Part,2
