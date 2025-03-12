@@ -18,8 +18,9 @@ This project is an application for a mock car dealership with auctioning functio
 ## How to Run
 
 1. Compile the project using a C++ compiler.
-       `ex. g++ .\main.cpp .\Bid.cpp .\Browse.cpp .\Cardealership.cpp .\Create.cpp .\Listing.cpp .\Part.cpp .\Vehicle.cpp -o example`
-3. Run the executable `prj.exe`.
+       ex. `g++ .\main.cpp .\Bid.cpp .\Browse.cpp .\Cardealership.cpp .\Create.cpp .\Listing.cpp .\Part.cpp .\Vehicle.cpp -o example`
+3. Run the executable `example.exe`.
+       ex. `./example`
 
 ## Features
 
