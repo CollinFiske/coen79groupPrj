@@ -41,16 +41,10 @@ This project is an application for a mock car dealership with auctioning functio
 6. **Edit Listings**: Modify your existing listings.
 7. **End Auctions**: End an auction and mark the item as sold.
 
-## Data Persistence
+## Data Storage
 
 - **Users**: User data is stored in `users.txt`.
 - **Listings**: Listings data is stored in `listings.txt`.
-
-## Example Data
-
-### users.txt
-
-### listings.txt
 
 ## License
 
